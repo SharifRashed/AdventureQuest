@@ -12,7 +12,11 @@ namespace Quest
             bool run = true;
             while (run)
             {
-
+                Robe newRobe = new Robe
+                {
+                    Colors = new List<string> { "red", "blue", "green" },
+                    RobeLength = 77
+                };
 
                 // Create a few challenges for our Adventurer's quest
                 // The "Challenge" Constructor takes three arguments
@@ -51,7 +55,8 @@ namespace Quest
 
                 // Make a new "Adventurer" object using the "Adventurer" class
                 string newAdventurer = Console.ReadLine();
-                Adventurer theAdventurer = new Adventurer(newAdventurer);
+                Adventurer theAdventurer = new Adventurer(newAdventurer, newRobe);
+                Console.WriteLine(theAdventurer.GetDescription());
 
 
                 // A list of challenges for the Adventurer to complete
